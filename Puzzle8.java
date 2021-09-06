@@ -7,7 +7,8 @@
 public class Puzzle8 {
 
 	public static void main(String[] args) {
-		
+		FileAccessHelper fileHelper = new FileAccessHelper(args);
+		System.out.println(fileHelper.toString());
 	}
 	
 }
