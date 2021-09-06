@@ -26,7 +26,6 @@ public class FileAccessHelper {
 			// Se obtiene el tamaño del problema
 			s = new Scanner(fichero);
 			dims = Integer.valueOf(s.nextLine());
-			System.out.println("Generando matrices de "+dims+" dimensiones");
 
 			// Se obtienen los tableros
 			tab_inicio = new int[dims][dims];
@@ -57,6 +56,10 @@ public class FileAccessHelper {
 				System.out.println("Error: "+ex2.getMessage());
 			}
 		}
+	}
+
+	public int getDimensiones() {
+		return dims;
 	}
 
 	public int[][] getTab_inicio() {
