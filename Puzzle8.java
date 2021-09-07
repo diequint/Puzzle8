@@ -13,10 +13,24 @@ public class Puzzle8 {
 		int[][] tab_inicio = fileHelper.getTab_inicio();
 		int[][] tab_meta = fileHelper.getTab_meta();
 		HillClimbing colina = new HillClimbing(dims, tab_inicio, tab_meta);
-		char mov=colina.nuevaIteracion();
-		//U-Up, D-Down, L-Left, R-Right, N-No hay solución, E-Solucion
-		//TODO: Colocarlo en un ciclo while con condición != N ó E
-		System.out.println("\nMejor movimiento:"+mov);
+		char mov=colina.nuevaIteracion();	//Primera iteración
+        String movimientos="";
+        if(!((mov == 'N') || (mov == 'E'))){
+            movimientos=movimientos+mov;
+        }
+        mov=colina.nuevaIteracion();
+		//La primera iteración está separada porque al primero no se le
+		//coloca la coma antes de la letra como al resto
+        while(!((mov == 'N') || (mov == 'E'))){
+            movimientos=movimientos+","+mov;
+            mov=colina.nuevaIteracion();
+        }
+		if(mov == 'N'){
+			System.out.println("\nNo se encontro solucion. Movimientos:");
+		}else{
+			System.out.println("\nSe encontro esta solucion:");
+		}
+        System.out.println(movimientos);
 	}
 	
 }
