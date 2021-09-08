@@ -20,7 +20,7 @@ public class FileAccessHelper {
 			nomFichero = args[0];
 		}
 		fichero = new File(nomFichero);
-		System.out.println("Fichero "+nomFichero);
+		//System.out.println("Fichero "+nomFichero);
 		
 		try {
 			// Se obtiene el tamaño del problema
